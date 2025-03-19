@@ -17,15 +17,15 @@ namespace Restauracja.Model
         public new ObservableCollection<string> Ingredients { get; set; }
 
         public void EdytujPotrawe(
-            Potrawa _selectedPotrawa,
             string? NewName,
             string? NewDescription,
             string? NewCategory,
-            string? NewImageUrl,
-            ObservableCollection<string>? NewIngredients)
+            string? NewImageUrl)
         {
-            
+            Potrawa potrawa = 
         }
+
+
 
     }
 }
