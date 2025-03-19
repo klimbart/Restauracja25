@@ -16,9 +16,15 @@ namespace Restauracja.Model
         public string ImageUrl { get; set; }
         public new ObservableCollection<string> Ingredients { get; set; }
 
-        public void EdytujPotrawe()
+        public void EdytujPotrawe(
+            Potrawa _selectedPotrawa,
+            string? NewName,
+            string? NewDescription,
+            string? NewCategory,
+            string? NewImageUrl,
+            ObservableCollection<string>? NewIngredients)
         {
-
+            
         }
 
     }

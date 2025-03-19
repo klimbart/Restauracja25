@@ -13,6 +13,15 @@ namespace Restauracja.ViewModel
 {
     public class ViewModel
     {
+        private Potrawa _selectedPotrawa;
+        public Potrawa SelectedPotrawa
+        {
+            get => _selectedPotrawa;
+            set
+            {
+                _selectedPotrawa = value;
+            }
+        }
         public ObservableCollection<Potrawa> Potrawy { get; set; } = new ObservableCollection<Potrawa>();
         public Command EditDishCmd { get; }
         private readonly INavigation _navigation;
@@ -22,14 +31,16 @@ namespace Restauracja.ViewModel
             _navigation = navigation;
             _dataService = dataService;
             Potrawy = _dataService.Potrawy;
-
             EditDishCmd = new Command<Potrawa>(async (potrawa) => await EditDish(potrawa));
+            _selectedPotrawa = Potrawy[0];
+            SelectedPotrawa = Potrawy[0];
         }
 
         private async Task EditDish(Potrawa potrawa)
         {
             if (potrawa != null)
-                await _navigation.PushAsync(new DetailedPage(potrawa));
+                SelectedPotrawa = potrawa;
+            await _navigation.PushAsync(new DetailedPage(potrawa));
         }
 
     }
