@@ -20,6 +20,6 @@
         <Label Text="Link do obrazka:"/>
         <Entry Text="{Binding ImageUrl}" x:Name="NewImageUrlIn"/>
 
-        <Button Text="Gotowe" />
+        <Button Text="Gotowe" Clicked="OnSaveButtonClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -14,6 +14,8 @@ namespace Restauracja.ViewModel
     public class ViewModel
     {
         private Potrawa _selectedPotrawa;
+        // tymczasowo wybrana potrawa
+        
         public Potrawa SelectedPotrawa
         {
             get => _selectedPotrawa;
@@ -22,6 +24,8 @@ namespace Restauracja.ViewModel
                 _selectedPotrawa = value;
             }
         }
+       
+
         public ObservableCollection<Potrawa> Potrawy { get; set; } = new ObservableCollection<Potrawa>();
         public Command EditDishCmd { get; }
         private readonly INavigation _navigation;
@@ -34,6 +38,8 @@ namespace Restauracja.ViewModel
             EditDishCmd = new Command<Potrawa>(async (potrawa) => await EditDish(potrawa));
             _selectedPotrawa = Potrawy[0];
             SelectedPotrawa = Potrawy[0];
+
+            // ustawia pierwszą potrawę jako wybraną
         }
 
         private async Task EditDish(Potrawa potrawa)
