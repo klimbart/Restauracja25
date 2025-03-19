@@ -3,12 +3,12 @@
     x:Class="Restauracja.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Restauracja"
+    xmlns:local="clr-namespace:Restauracja.View"
     Shell.FlyoutBehavior="Flyout"
     Title="Restauracja">
 
     <ShellContent
-        Title="Home"
+        Title="Potrawy"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

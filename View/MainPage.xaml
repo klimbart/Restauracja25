@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            x:Class="Restauracja.View.MainPage"
+             x:Name="mainroot">  
+
+   <ScrollView>  
+       <StackLayout Margin="20">
+            <CollectionView ItemsSource="{Binding Potrawy}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="10">
+                            <Label Text="{Binding Name}" FontSize="Large" CharacterSpacing="2" FontAttributes="Bold"/>
+                            <Label Text="{Binding Category, StringFormat='Kategoria: {0}'}" FontSize="20" FontAttributes="Italic"/>
+                            <Label Text="{Binding Price, StringFormat='{0} zł'}" FontSize="Medium" />
+                            <HorizontalStackLayout Spacing="50">
+                                <Image Source="{Binding ImageUrl}"  HeightRequest="300" WidthRequest="300"/>
+                                <Image Source="{Binding ImageUrl}"  HeightRequest="300" WidthRequest="300"/>
+                                <Image Source="{Binding ImageUrl}"  HeightRequest="300" WidthRequest="300"/>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Description}" FontSize="Small" />
+                            <Button Text="Edytuj Pozycje"
+                                    WidthRequest="130"
+                                    HorizontalOptions="Start"
+                                    BackgroundColor="Gray"
+                                    Command="{Binding Source={x:Reference mainroot}, Path=BindingContext.EditDishCmd}"
+                                    CommandParameter="{Binding}"
+                                    />
+                            
+                            <Border BackgroundColor="White"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>  
+   </ScrollView>  
+
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Restauracja.View.DetailedPage"
+             Title="Edytowanie Potrawy">
+    <VerticalStackLayout Margin="20">
+        <Label Text="Zmień podaną wartość i wciśnij gotowe" FontAttributes="Bold" FontSize="20" Margin="10"/>
+        <Label Text="Nazwa Potrawy: "/>
+        <Entry Text="{Binding Name}"/>
+
+        <Label Text="Cena: "/>
+        <Entry Text="{Binding Price}"/>
+
+        <Label Text="Opis Potrawy:"/>
+        <Entry Text="{Binding Description}"/>
+
+        <Label Text="Kategoria:"/>
+        <Entry Text="{Binding Category}"/>
+
+        <Label Text="Link do obrazka:"/>
+        <Entry Text="{Binding ImageUrl}" />
+
+        <Button Text="Gotowe" />
+    </VerticalStackLayout>
+</ContentPage>

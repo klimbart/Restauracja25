@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Restauracja.Service;
 
 namespace Restauracja;
 
@@ -18,7 +19,7 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
-		return builder.Build();
+        builder.Services.AddSingleton<DataService>();
+        return builder.Build();
 	}
 }
